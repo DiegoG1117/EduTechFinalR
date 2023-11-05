@@ -143,7 +143,7 @@ void LanzarBalon()
     float velocidadZ = (puntoObjetivo.position.z - transform.position.z) / (CE.VelocidadInicialD * Mathf.Cos(anguloRad));
 
     // Aplicar la velocidad inicial al balón
-    rb.velocity = new Vector3(velocidadX, velocidadY, -2.7f);
+    rb.velocity = new Vector3(velocidadX, velocidadY, -1.3f);
 
     // Reducir el tiempo escalar para simular la cámara lenta (ajusta según tus necesidades)
     Time.timeScale = 0.1f; // Cambia este valor para ajustar la velocidad de cámara lenta
