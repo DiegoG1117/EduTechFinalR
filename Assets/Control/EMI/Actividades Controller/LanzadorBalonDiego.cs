@@ -20,7 +20,6 @@ public class LanzadorBalonDiego : MonoBehaviour
 
     public GameObject balon; // El objeto del balón en la escena
     public Transform balonD;
-    public Transform puntoObjetivo;
     public GameObject barraAltura;
     public GameObject barraDistancia; // El objeto del balón en la escena
     public Transform puntoInicial; // El punto inicial del balón en la parábola
@@ -30,18 +29,15 @@ public class LanzadorBalonDiego : MonoBehaviour
     public TextMeshPro anguloText;
     public float nuevaPosicionY; 
     public float nuevaPosicionx; 
-    public float nuevaPosicionz; 
 
     void Start()
     {
         Vector3 posicionActual = balonD.position;
         nuevaPosicionY = CE.AlturaD;
         nuevaPosicionx = 13.728f - CE.DistanciaD;
-        nuevaPosicionz = 3.74f;
         // Cambia la posición en el eje Y a la nueva posición deseada
         posicionActual.y =  nuevaPosicionY;
         posicionActual.x =  nuevaPosicionx;
-        posicionActual.z =  nuevaPosicionz;
 
         // Asigna la nueva posición al objeto
         balonD.position = posicionActual;
@@ -140,10 +136,9 @@ void LanzarBalon()
     float anguloRad = Mathf.Deg2Rad * CE.AnguloD;
     float velocidadX = CE.VelocidadInicialD * Mathf.Cos(anguloRad);
     float velocidadY = CE.VelocidadInicialD * Mathf.Sin(anguloRad);
-    float velocidadZ = (puntoObjetivo.position.z - transform.position.z) / (CE.VelocidadInicialD * Mathf.Cos(anguloRad));
 
     // Aplicar la velocidad inicial al balón
-    rb.velocity = new Vector3(velocidadX, velocidadY, -1.3f);
+    rb.velocity = new Vector3(velocidadX, velocidadY, 0);
 
     // Reducir el tiempo escalar para simular la cámara lenta (ajusta según tus necesidades)
     Time.timeScale = 0.1f; // Cambia este valor para ajustar la velocidad de cámara lenta

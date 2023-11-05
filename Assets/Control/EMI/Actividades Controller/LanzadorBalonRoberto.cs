@@ -20,7 +20,6 @@ public class LanzadorBalonRoberto : MonoBehaviour
 
     public GameObject balon; // El objeto del balón en la escena
     public Transform balonR;
-    public Transform puntoObjetivo;
     public GameObject barraAltura;
     public GameObject barraDistancia; // El objeto del balón en la escena
     public Transform puntoInicial; // El punto inicial del balón en la parábola
@@ -30,18 +29,15 @@ public class LanzadorBalonRoberto : MonoBehaviour
     public TextMeshPro anguloText;
     public float nuevaPosicionY; 
     public float nuevaPosicionx; 
-    public float nuevaPosicionz; 
 
     void Start()
     {
         Vector3 posicionActual = balonR.position;
         nuevaPosicionY = CE.AlturaR;
         nuevaPosicionx = 13.728f - CE.DistanciaR;
-        nuevaPosicionz = -2.95f;
         // Cambia la posición en el eje Y a la nueva posición deseada
         posicionActual.y =  nuevaPosicionY;
         posicionActual.x =  nuevaPosicionx;
-        posicionActual.z =  nuevaPosicionz;
 
         // Asigna la nueva posición al objeto
         balonR.position = posicionActual;
@@ -70,8 +66,7 @@ public class LanzadorBalonRoberto : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Juan Altura!!!!!!: " +nuevaPosicionY);
-        Debug.Log("Juan Distancia!!!!!: " +nuevaPosicionx);
+
 
         // Detectar la entrada del usuario para lanzar el balón
         if (Input.GetKeyDown(KeyCode.Space))
@@ -131,23 +126,22 @@ public class LanzadorBalonRoberto : MonoBehaviour
         anguloTrayectoria = Mathf.Atan2(velocidad.y, velocidad.x) * Mathf.Rad2Deg;
     }
 
-void LanzarBalon()
-{
-    // Activar la gravedad
-    rb.useGravity = true;
+    void LanzarBalon()
+    {
+        // Activar la gravedad
+        rb.useGravity = true;
 
-    // Calcular las componentes del vector de velocidad inicial en Unity
-    float anguloRad = Mathf.Deg2Rad * CE.AnguloR;
-    float velocidadX = CE.VelocidadInicialR * Mathf.Cos(anguloRad);
-    float velocidadY = CE.VelocidadInicialR * Mathf.Sin(anguloRad);
+        // Calcular las componentes del vector de velocidad inicial en Unity
+        float anguloRad = Mathf.Deg2Rad * CE.AnguloR;
+        float velocidadX = CE.VelocidadInicialR * Mathf.Cos(anguloRad);
+        float velocidadY = CE.VelocidadInicialR * Mathf.Sin(anguloRad);
 
-    // Aplicar la velocidad inicial al balón
-    rb.velocity = new Vector3(velocidadX, velocidadY, 2.7f);
-
-    // Reducir el tiempo escalar para simular la cámara lenta (ajusta según tus necesidades)
-    Time.timeScale = 0.1f; // Cambia este valor para ajustar la velocidad de cámara lenta
-}
-
+        // Aplicar la velocidad inicial al balón
+        rb.velocity = new Vector3(velocidadX, velocidadY, 0);
+        
+        // Reducir el tiempo escalar para simular la cámara lenta (ajusta según tus necesidades)
+        Time.timeScale = 0.05f; // Cambia este valor para ajustar la velocidad de cámara lenta
+    }
 
 
 
