@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Vista/Scenes/Registro_Login.unity
+    guid: 4ff016e2e30def0408ea77bf66cd174e
+  - enabled: 1
+    path: Assets/Vista/Scenes/Gimnasio de baloncesto 1.unity
+    guid: f50e52d4314f949758417e6d3aaaf73a
+  - enabled: 1
+    path: Assets/Vista/Scenes/Colegio.unity
+    guid: 5b781d69502bd49259dc5b3fcfbae0ee
+  - enabled: 1
+    path: Assets/Vista/Scenes/EscenaPractica.unity
+    guid: 5caa1bca3dd4a49158598a0d91582fe3
+  - enabled: 1
+    path: Assets/Vista/Scenes/Testeo2.unity
+    guid: f17065c5a6b864ea99bb0cb85989560f
+  - enabled: 1
+    path: Assets/Vista/Scenes/EscenaStadio.unity
+    guid: 25a6d5b6a2ad4464da7b0b48f12eefce
+  m_configObjects: {}
