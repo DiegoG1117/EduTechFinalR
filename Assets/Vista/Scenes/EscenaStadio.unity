@@ -1076,7 +1076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &265312721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1204,7 +1204,7 @@ Transform:
   - {fileID: 1620932111}
   - {fileID: 2044449578}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 175.784, z: 0}
 --- !u!1 &288014774
 GameObject:
@@ -1301,7 +1301,7 @@ RectTransform:
   - {fileID: 831295292}
   - {fileID: 254261301}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3729,18 +3729,18 @@ MonoBehaviour:
   AlturaR: 0
   DistanciaR: 0
   LanzamientoR: 0
-  VistaJuan: {fileID: 0}
-  PosicionJuan: {fileID: 0}
-  PIJuan: {fileID: 0}
-  BalonJuan: {fileID: 0}
-  VistaDiego: {fileID: 0}
-  PosicionDiego: {fileID: 0}
-  PIDiego: {fileID: 0}
-  BalonDiego: {fileID: 0}
-  VistaRoberto: {fileID: 0}
-  PosicionRoberto: {fileID: 0}
-  PIRoberto: {fileID: 0}
-  BalonRoberto: {fileID: 0}
+  VistaJuan: {fileID: 1895716197}
+  PosicionJuan: {fileID: 1017226738}
+  PIJuan: {fileID: 492047576}
+  BalonJuan: {fileID: 923696961720404958}
+  VistaDiego: {fileID: 203956628}
+  PosicionDiego: {fileID: 383615643}
+  PIDiego: {fileID: 1674247574}
+  BalonDiego: {fileID: 636547596}
+  VistaRoberto: {fileID: 1115490131}
+  PosicionRoberto: {fileID: 1807641487}
+  PIRoberto: {fileID: 1416472474}
+  BalonRoberto: {fileID: 265312720}
 --- !u!4 &974004586
 Transform:
   m_ObjectHideFlags: 0
@@ -5334,7 +5334,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1353463393
 GameObject:
@@ -5514,7 +5514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!120 &1416472475
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -5627,7 +5627,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1421458039
 GameObject:
@@ -7285,7 +7285,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1807641488
 Transform:
   m_ObjectHideFlags: 0
@@ -7293,14 +7293,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1807641487}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 13.728, y: 0.172, z: 1.076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1159521912}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1838544021
 GameObject:
