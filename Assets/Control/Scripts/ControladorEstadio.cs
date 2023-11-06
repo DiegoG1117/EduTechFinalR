@@ -31,7 +31,9 @@ public class ControladorEstadio : MonoBehaviour
     public GameObject PosicionRoberto;
     public GameObject PIRoberto;
     public GameObject BalonRoberto;
-    
+
+    public GameObject Vistapanel;
+    public GameObject panel;
 
     // Start is called before the first frame update
     void Awake()
@@ -72,6 +74,9 @@ public class ControladorEstadio : MonoBehaviour
         PIRoberto.SetActive(false);
         BalonRoberto.SetActive(false);
 
+        Vistapanel.SetActive(false);
+        panel.SetActive(false);
+
 
     }
 
@@ -107,5 +112,26 @@ public class ControladorEstadio : MonoBehaviour
         PosicionRoberto.SetActive(true);
         PIRoberto.SetActive(true);
         BalonRoberto.SetActive(true);
+    }
+
+    public void RetroalimentacionPanel()
+    {
+        VistaJuan.SetActive(false);
+        PosicionJuan.SetActive(false);
+        PIJuan.SetActive(false);
+        BalonJuan.SetActive(false);
+
+        VistaDiego.SetActive(false);
+        PosicionDiego.SetActive(false);
+        PIDiego.SetActive(false);
+        BalonDiego.SetActive(false);
+
+        VistaRoberto.SetActive(false);
+        PosicionRoberto.SetActive(false);
+        PIRoberto.SetActive(false);
+        BalonRoberto.SetActive(false);
+
+        Vistapanel.SetActive(true);
+        panel.SetActive(true);
     }
 }
