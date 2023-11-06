@@ -55,6 +55,9 @@ public class ControladorMenu : MonoBehaviour
 
     public GameObject ventanaEmergente;
 
+    public GameObject MusicaMenu;
+    public GameObject MusicaEntrenamiento;
+
 
     private void Start()
     {
@@ -93,6 +96,8 @@ public class ControladorMenu : MonoBehaviour
         audioJuan.enabled = false;
         audioDiego.enabled = false;
         audioRoberto.enabled = false;
+
+        MusicaEntrenamiento.SetActive(false);
 
     }
 
@@ -148,6 +153,9 @@ public class ControladorMenu : MonoBehaviour
         VistaRoberto.SetActive(false);
 
         ventanaEmergente.SetActive(false);
+
+        MusicaMenu.SetActive(true);
+        MusicaEntrenamiento.SetActive(false);
         
     }
 
@@ -168,6 +176,9 @@ public class ControladorMenu : MonoBehaviour
         VistaRoberto.SetActive(false);
 
         ventanaEmergente.SetActive(true);
+
+        MusicaMenu.SetActive(false);
+        MusicaEntrenamiento.SetActive(true);
     }
     public void PracticaDiego()
     {
@@ -186,6 +197,9 @@ public class ControladorMenu : MonoBehaviour
         VistaRoberto.SetActive(false);
 
         ventanaEmergente.SetActive(true);
+
+        MusicaMenu.SetActive(false);
+        MusicaEntrenamiento.SetActive(true);
     }
     public void PracticaRoberto()
     {
@@ -204,6 +218,9 @@ public class ControladorMenu : MonoBehaviour
         VistaRoberto.SetActive(true);
 
         ventanaEmergente.SetActive(true);
+
+        MusicaMenu.SetActive(false);
+        MusicaEntrenamiento.SetActive(true);
     }
        public void OnMouseEnter()
     {
