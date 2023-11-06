@@ -19,6 +19,19 @@ public class ControladorEstadio : MonoBehaviour
     public float AlturaR;
     public float DistanciaR;
     public int LanzamientoR = 0;
+    public GameObject VistaJuan;
+    public GameObject PosicionJuan;
+    public GameObject PIJuan;
+    public GameObject BalonJuan;
+    public GameObject VistaDiego;
+    public GameObject PosicionDiego;
+    public GameObject PIDiego;
+    public GameObject BalonDiego;
+    public GameObject VistaRoberto;
+    public GameObject PosicionRoberto;
+    public GameObject PIRoberto;
+    public GameObject BalonRoberto;
+    
 
     // Start is called before the first frame update
     void Awake()
@@ -39,31 +52,60 @@ public class ControladorEstadio : MonoBehaviour
         AnguloR = PlayerPrefs.GetFloat("ARoberto");
         AlturaR = PlayerPrefs.GetFloat("AlturaRoberto");
         DistanciaR = PlayerPrefs.GetFloat("DistanciaRoberto");
-        LanzamientoR = PlayerPrefs.GetInt("TiroRoberto");
+        LanzamientoR = PlayerPrefs.GetInt("TiroRoberto"); 
+    }
 
-        
+    void Start()
+    {
+        VistaJuan.SetActive(true);
+        PosicionJuan.SetActive(true);
+        PIJuan.SetActive(true);
+        BalonJuan.SetActive(true);
+
+        VistaDiego.SetActive(false);
+        PosicionDiego.SetActive(false);
+        PIDiego.SetActive(false);
+        BalonDiego.SetActive(false);
+
+        VistaRoberto.SetActive(false);
+        PosicionRoberto.SetActive(false);
+        PIRoberto.SetActive(false);
+        BalonRoberto.SetActive(false);
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-         Debug.Log("Diego Velocidad: " + VelocidadInicialD);
-         Debug.Log("Diego Angulo: " +AnguloD);
-         Debug.Log("Diego Altura: " +AlturaD);
-         Debug.Log("Diego Distancia: " +DistanciaD);
-         Debug.Log("Diego Lanzamiento: " +LanzamientoD);
 
-         Debug.Log("Juan Velocidad: " + VelocidadInicialJ);
-         Debug.Log("Juan Angulo: " +AnguloJ);
-         Debug.Log("Juan Altura: " +AlturaJ);
-         Debug.Log("Juan Distancia: " +DistanciaJ);
-         Debug.Log("Juan Lanzamiento: " +LanzamientoJ);
-
-         Debug.Log("Roberto Velocidad: " + VelocidadInicialR);
-         Debug.Log("Roberto Angulo: " +AnguloR);
-         Debug.Log("Roberto Altura: " +AlturaR);
-         Debug.Log("Roberto Distancia: " +DistanciaR);
-         Debug.Log("Roberto Lanzamiento: " +LanzamientoR);
          
+    }
+    public void RetroalimentacionDiego(){
+        VistaJuan.SetActive(false);
+        PosicionJuan.SetActive(false);
+        PIJuan.SetActive(false);
+        BalonJuan.SetActive(false);
+
+        VistaDiego.SetActive(true);
+        PosicionDiego.SetActive(true);
+        PIDiego.SetActive(true);
+        BalonDiego.SetActive(true);
+    }
+    public void RetroalimentacionRoberto(){
+        VistaJuan.SetActive(false);
+        PosicionJuan.SetActive(false);
+        PIJuan.SetActive(false);
+        BalonJuan.SetActive(false);
+
+        VistaDiego.SetActive(false);
+        PosicionDiego.SetActive(false);
+        PIDiego.SetActive(false);
+        BalonDiego.SetActive(false);
+
+        VistaRoberto.SetActive(true);
+        PosicionRoberto.SetActive(true);
+        PIRoberto.SetActive(true);
+        BalonRoberto.SetActive(true);
     }
 }

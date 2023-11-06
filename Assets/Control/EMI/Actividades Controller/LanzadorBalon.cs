@@ -23,6 +23,7 @@ public class LanzadorBalon : MonoBehaviour
     public GameObject barraAltura;
     public GameObject barraDistancia; // El objeto del balón en la escena
     public Transform puntoInicial; // El punto inicial del balón en la parábola
+    public Transform JuanPosicion; // El punto inicial del balón en la parábola
     public TextMeshPro alturaText; // El objeto TextMeshPro para mostrar la altura
     public TextMeshPro distanciaText; // El objeto TextMeshPro para mostrar la distancia
     public TextMeshPro velocidadText;
@@ -43,6 +44,7 @@ public class LanzadorBalon : MonoBehaviour
         // Asigna la nueva posición al objeto
         balonJ.position = posicionActual;
         puntoInicial.position = posicionActual;
+        JuanPosicion.position = posicionActual;
 
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false; // Desactivar la gravedad inicialmente
