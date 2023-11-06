@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class LanzadorBalonRoberto : MonoBehaviour
@@ -18,6 +19,11 @@ public class LanzadorBalonRoberto : MonoBehaviour
 
     private float tiempoEscalaOriginal; // Almacena el tiempo escala original
 
+    [SerializeField] TMP_Text textoResultado;
+    public Button botonRepetir;
+    [SerializeField] TMP_Text textoVelocidad1;
+    [SerializeField] TMP_Text textoAngulo1;
+
     public GameObject balon; // El objeto del balón en la escena
     public Transform balonR;
     public GameObject barraAltura;
@@ -29,7 +35,12 @@ public class LanzadorBalonRoberto : MonoBehaviour
     public TextMeshPro velocidadText;
     public TextMeshPro anguloText;
     public float nuevaPosicionY; 
-    public float nuevaPosicionx; 
+    public float nuevaPosicionx;
+
+    /// <summary>
+    /// ////////////////////////////////////////////////////
+    /// </summary>
+
 
     void Start()
     {
@@ -63,7 +74,31 @@ public class LanzadorBalonRoberto : MonoBehaviour
         alturaText.enabled = true; 
         velocidadText.enabled = true; 
         anguloText.enabled = true; 
-        distanciaText.enabled = true; 
+        distanciaText.enabled = true;
+
+        PlayerPrefs.HasKey("Valor5");
+        PlayerPrefs.HasKey("Valor6");
+
+        float valor5 = PlayerPrefs.GetFloat("Valor5");
+        float valor6 = PlayerPrefs.GetFloat("Valor6");
+
+        if (CE.LanzamientoR == 1)
+        {
+            //lineRenderer.material = materialVerde;
+            textoResultado.text = "Exitoso";
+            textoResultado.color = Color.green;
+            botonRepetir.gameObject.SetActive(false); // Desactiva el botón
+        }
+        else
+        {
+            //lineRenderer.material = materialRojo;
+            textoResultado.text = "Fallido";
+            textoResultado.color = Color.red;
+            botonRepetir.gameObject.SetActive(true); // Activa el botón
+        }
+
+        MostrarValores("Velocidad : ", valor5, "Ángulo : ", valor6, textoVelocidad1, textoAngulo1);
+
     }
 
     void Update()
@@ -73,16 +108,23 @@ public class LanzadorBalonRoberto : MonoBehaviour
         // Detectar la entrada del usuario para lanzar el balón
         if (Input.GetKeyDown(KeyCode.Space))
         {
+
+           
+
             LanzarBalon();
             
             if (CE.LanzamientoR == 1)
             {
                 lineRenderer.material = materialVerde;
+           
             }
             else
             {
                 lineRenderer.material = materialRojo;
+               
             }
+
+         
         }
 
         if (balon != null && puntoInicial != null && alturaText != null && distanciaText != null)
@@ -104,6 +146,18 @@ public class LanzadorBalonRoberto : MonoBehaviour
             // Actualizar el TextMeshPro de distancia con la distancia
             anguloText.text = "θ: " + anguloTrayectoria.ToString("F2") + "°"; // "F2" para mostrar dos decimales
         }
+    }
+
+    void MostrarResultado(TMP_Text texto, string mensaje, Color color)
+    {
+        texto.text = mensaje;
+        texto.color = color;
+    }
+
+    void MostrarValores(string prefixVelocidad, float velocidad, string prefixAngulo, float angulo, TMP_Text textoVelocidad, TMP_Text textoAngulo)
+    {
+        textoVelocidad.text = prefixVelocidad + velocidad.ToString("F1") + " m/s"; // Mostrar dos decimales
+        textoAngulo.text = prefixAngulo + angulo.ToString("F0") + "°"; // Mostrar dos decimales
     }
 
     void FixedUpdate()
@@ -143,6 +197,8 @@ public class LanzadorBalonRoberto : MonoBehaviour
         
         // Reducir el tiempo escalar para simular la cámara lenta (ajusta según tus necesidades)
         Time.timeScale = 0.05f; // Cambia este valor para ajustar la velocidad de cámara lenta
+
+
     }
 
 
@@ -164,4 +220,6 @@ public class LanzadorBalonRoberto : MonoBehaviour
             Time.timeScale = tiempoEscalaOriginal;
         }
     }
+
+    
 }

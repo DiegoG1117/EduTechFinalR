@@ -21,19 +21,19 @@ public class guardarDatosJoseph : MonoBehaviour
 
     public void GuardarDatos()
     {
-        int valor1 = int.Parse(inputValor1.text);
-        int valor2 = int.Parse(inputValor2.text);
-        int valor3 = int.Parse(inputValor3.text);
-        int valor4 = int.Parse(inputValor4.text);
-        int valor5 = int.Parse(inputValor5.text);
-        int valor6 = int.Parse(inputValor6.text);
+        float valor1 = float.Parse(inputValor1.text);
+        float valor2 = float.Parse(inputValor2.text);
+        float valor3 = float.Parse(inputValor3.text);
+        float valor4 = float.Parse(inputValor4.text);
+        float valor5 = float.Parse(inputValor5.text);
+        float valor6 = float.Parse(inputValor6.text);
 
-        PlayerPrefs.SetInt("Valor1", valor1);
-        PlayerPrefs.SetInt("Valor2", valor2);
-        PlayerPrefs.SetInt("Valor3", valor3);
-        PlayerPrefs.SetInt("Valor4", valor4);
-        PlayerPrefs.SetInt("Valor5", valor5);
-        PlayerPrefs.SetInt("Valor6", valor6);
+        PlayerPrefs.SetFloat("Valor1", valor1);
+        PlayerPrefs.SetFloat("Valor2", valor2);
+        PlayerPrefs.SetFloat("Valor3", valor3);
+        PlayerPrefs.SetFloat("Valor4", valor4);
+        PlayerPrefs.SetFloat("Valor5", valor5);
+        PlayerPrefs.SetFloat("Valor6", valor6);
         PlayerPrefs.Save();
     }
 }

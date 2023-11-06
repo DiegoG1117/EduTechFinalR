@@ -1289,7 +1289,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254261300}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fffb37c1339a0e142bbd4e5731e5e4b5, type: 3}
   m_Name: 
@@ -1304,8 +1304,8 @@ MonoBehaviour:
   textoAngulo1: {fileID: 1941328899}
   textoVelocidad2: {fileID: 1132295828}
   textoAngulo2: {fileID: 852075257}
-  textoVelocidad3: {fileID: 856225158}
-  textoAngulo3: {fileID: 741770101}
+  textoVelocidad3: {fileID: 0}
+  textoAngulo3: {fileID: 0}
 --- !u!1 &265312720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,6 +1345,10 @@ MonoBehaviour:
   materialVerde: {fileID: 2100000, guid: 8978fea1febb04a9ca8ee9f4be55252c, type: 2}
   materialRojo: {fileID: 2100000, guid: ec085018bf70a4f31915bc8c193a881f, type: 2}
   respuesta: 1
+  textoResultado: {fileID: 733867686}
+  botonRepetir: {fileID: 1623656038}
+  textoVelocidad1: {fileID: 856225158}
+  textoAngulo1: {fileID: 741770101}
   balon: {fileID: 265312720}
   balonR: {fileID: 265312726}
   barraAltura: {fileID: 2044449575}
@@ -2676,6 +2680,10 @@ MonoBehaviour:
   anguloText: {fileID: 809166043}
   nuevaPosicionY: 0
   nuevaPosicionx: 0
+  textoResultado: {fileID: 1021107603}
+  botonRepetir: {fileID: 699562146}
+  textoVelocidad1: {fileID: 1132295828}
+  textoAngulo1: {fileID: 852075257}
 --- !u!54 &636547598
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7277,7 +7285,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1623656035
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13780,6 +13788,10 @@ MonoBehaviour:
   anguloText: {fileID: 3797418001131499204}
   nuevaPosicionY: 0
   nuevaPosicionx: 0
+  textoResultado: {fileID: 1158974128}
+  botonRepetir: {fileID: 233254013}
+  textoVelocidad1: {fileID: 79937612}
+  textoAngulo1: {fileID: 1941328899}
 --- !u!33 &6708253068904817893
 MeshFilter:
   m_ObjectHideFlags: 0
