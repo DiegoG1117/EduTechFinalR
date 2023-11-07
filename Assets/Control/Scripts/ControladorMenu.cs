@@ -58,6 +58,9 @@ public class ControladorMenu : MonoBehaviour
     public GameObject MusicaMenu;
     public GameObject MusicaEntrenamiento;
 
+    // Obtener valor del temporizador
+    public TextMeshProUGUI timerTextTMP;
+
 
     private void Start()
     {
@@ -88,7 +91,7 @@ public class ControladorMenu : MonoBehaviour
         BtnJuan.SetActive(true);
         BtnDiego.SetActive(true);
         BtnRoberto.SetActive(true);
-        
+
         BtnAudioJuan.SetActive(false);
         BtnAudioDiego.SetActive(false);
         BtnAudioRoberto.SetActive(false);
@@ -103,9 +106,9 @@ public class ControladorMenu : MonoBehaviour
 
     private void Update()
     {
-            eJuan = EDatos.ejercicioJuan;
-            eDiego = EDatos.ejercicioDiego;
-            eRoberto = EDatos.ejercicioRoberto;
+        eJuan = EDatos.ejercicioJuan;
+        eDiego = EDatos.ejercicioDiego;
+        eRoberto = EDatos.ejercicioRoberto;
 
         if (eJuan == true)
         {
@@ -113,7 +116,7 @@ public class ControladorMenu : MonoBehaviour
             MenuJuan.SetActive(false);
             BtnJuan.SetActive(false);
             BtnAudioJuan.SetActive(true);
-            
+
         }
 
         if (eDiego == true)
@@ -122,7 +125,7 @@ public class ControladorMenu : MonoBehaviour
             MenuDiego.SetActive(false);
             BtnDiego.SetActive(false);
             BtnAudioDiego.SetActive(true);
-            
+
         }
 
         if (eRoberto == true)
@@ -131,19 +134,19 @@ public class ControladorMenu : MonoBehaviour
             MenuRoberto.SetActive(false);
             BtnRoberto.SetActive(false);
             BtnAudioRoberto.SetActive(true);
-            
+
         }
-            
+
     }
 
     public void Menu()
     {
-       
+
         VistaMenu.SetActive(true);
         ControladorJuan.SetActive(false);
         ControladorDiego.SetActive(false);
         ControladorRoberto.SetActive(false);
-        
+
         CamaraJuan.SetActive(false);
         CamaraDiego.SetActive(false);
         CamaraRoberto.SetActive(false);
@@ -156,12 +159,12 @@ public class ControladorMenu : MonoBehaviour
 
         MusicaMenu.SetActive(true);
         MusicaEntrenamiento.SetActive(false);
-        
+
     }
 
     public void PracticaJuan()
     {
-       
+
         VistaMenu.SetActive(false);
         ControladorJuan.SetActive(true);
         ControladorDiego.SetActive(false);
@@ -182,7 +185,7 @@ public class ControladorMenu : MonoBehaviour
     }
     public void PracticaDiego()
     {
-       
+
         VistaMenu.SetActive(false);
         ControladorJuan.SetActive(false);
         ControladorDiego.SetActive(true);
@@ -203,7 +206,7 @@ public class ControladorMenu : MonoBehaviour
     }
     public void PracticaRoberto()
     {
-       
+
         VistaMenu.SetActive(false);
         ControladorJuan.SetActive(false);
         ControladorDiego.SetActive(false);
@@ -222,7 +225,7 @@ public class ControladorMenu : MonoBehaviour
         MusicaMenu.SetActive(false);
         MusicaEntrenamiento.SetActive(true);
     }
-       public void OnMouseEnter()
+    public void OnMouseEnter()
     {
         // Este método se llama cuando el cursor entra en el collider del objeto
         textoEncima.color = colorHover; // Cambia el color cuando el cursor está encima
@@ -236,20 +239,20 @@ public class ControladorMenu : MonoBehaviour
 
     public void ReproducirAudioJ()
     {
-        audioJuan.enabled = true;        
+        audioJuan.enabled = true;
         // Reproduce el AudioClip
         audioJuan.Play();
     }
     public void ReproducirAudioD()
     {
-         audioDiego.enabled = true; 
+        audioDiego.enabled = true;
         // Reproduce el AudioClip
         audioDiego.Play();
-        
+
     }
     public void ReproducirAudioR()
     {
-          audioRoberto.enabled = true; 
+        audioRoberto.enabled = true;
         // Reproduce el AudioClip
         audioRoberto.Play();
     }
@@ -257,14 +260,17 @@ public class ControladorMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Colegio");
     }
-        public void CargarEscenaEstadio()
+    public void CargarEscenaEstadio()
     {
+        string tiempo = timerTextTMP.text;
+        Debug.Log("Tiempo en escena" + tiempo);
+        PlayerPrefs.SetString("tiempo", tiempo);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("EscenaStadio");
     }
     public void cerrarVentanaEmergente()
     {
-      ventanaEmergente.SetActive(false);
+        ventanaEmergente.SetActive(false);
     }
 
 }
- 

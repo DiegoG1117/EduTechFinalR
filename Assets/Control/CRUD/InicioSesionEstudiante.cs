@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 using System.Collections;
 using System.IO;
-using UnityEngine.SceneManagement; // Agrega esta línea
+using UnityEngine.SceneManagement; // Agrega esta lï¿½nea
 
 public class InicioSesionEstudiante : MonoBehaviour
 {
@@ -26,7 +26,7 @@ public class InicioSesionEstudiante : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Botón de inicio de sesión no asignado en el Inspector de Unity.");
+            Debug.LogError("Botï¿½n de inicio de sesiï¿½n no asignado en el Inspector de Unity.");
         }
     }
 
@@ -40,7 +40,7 @@ public class InicioSesionEstudiante : MonoBehaviour
 
     IEnumerator VerificarCredenciales(string email, string password)
     {
-        // Construir la URL con los parámetros de inicio de sesión
+        // Construir la URL con los parï¿½metros de inicio de sesiï¿½n
         string url = $"https://edu-tech-git-dev-santiagomc2k16.vercel.app/api/users/auth?email={email}&password={password}";
 
         string correoIngresado = inputField.text;
@@ -53,45 +53,47 @@ public class InicioSesionEstudiante : MonoBehaviour
 
         if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
         {
-            Debug.LogError($"Error al iniciar sesión. Código: {request.responseCode}. Detalles: {request.error}");
-            resultadoTexto.text = "Correo o contraseña incorrecta ";
+            Debug.LogError($"Error al iniciar sesiï¿½n. Cï¿½digo: {request.responseCode}. Detalles: {request.error}");
+            resultadoTexto.text = "Correo o contraseï¿½a incorrecta ";
             resultadoTexto.color = Color.red;
 
             panelError.SetActive(true);
         }
-        else if(correoIngresado.EndsWith("@uao.edu.co"))
+        else if (correoIngresado.EndsWith("@uao.edu.co"))
         {
-            resultadoTexto.text = "Correo válido";
+            PlayerPrefs.SetString("email", correoIngresado);
+            PlayerPrefs.Save();
+            resultadoTexto.text = "Correo vï¿½lido";
             resultadoTexto.color = Color.green;
-        
-           
-                Debug.Log("Inicio de sesión exitoso");
 
-                // Desactivar el PanelLogin
-                PanelLogin.SetActive(false);
 
-                // Cambiar a la escena "colegio"
-                SceneManager.LoadScene("Gimnasio de baloncesto 1");
+            Debug.Log("Inicio de sesiï¿½n exitoso");
 
-                // Agregar mensaje en consola
-                Debug.Log("¡Usuario ha iniciado sesión exitosamente!");
+            // Desactivar el PanelLogin
+            PanelLogin.SetActive(false);
 
-                // Generar y guardar JSON en el escritorio
-                string jsonContent = $"{{\"email\": \"{email}\", \"password\": \"{password}\"}}";
-                string desktopPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
-                string filePath = Path.Combine(desktopPath, "UsuarioSesion.json");
-                File.WriteAllText(filePath, jsonContent);
+            // Cambiar a la escena "colegio"
+            SceneManager.LoadScene("Gimnasio de baloncesto 1");
 
-                Debug.Log($"JSON guardado en: {filePath}");
-            }
-            else
-            {
-                Debug.LogError($"Inicio de sesión fallido tiene que ser uao.edu.co. Código: {request.responseCode}. Detalles: {request.downloadHandler.text}");
-                resultadoTexto.text = "El correo debe ser @uao.edu.co";
-                resultadoTexto.color = Color.red;
-                panelError.SetActive(true);
-            }
-        
+            // Agregar mensaje en consola
+            Debug.Log("ï¿½Usuario ha iniciado sesiï¿½n exitosamente!");
+
+            // Generar y guardar JSON en el escritorio
+            string jsonContent = $"{{\"email\": \"{email}\", \"password\": \"{password}\"}}";
+            string desktopPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
+            string filePath = Path.Combine(desktopPath, "UsuarioSesion.json");
+            File.WriteAllText(filePath, jsonContent);
+
+            Debug.Log($"JSON guardado en: {filePath}");
+        }
+        else
+        {
+            Debug.LogError($"Inicio de sesiï¿½n fallido tiene que ser uao.edu.co. Cï¿½digo: {request.responseCode}. Detalles: {request.downloadHandler.text}");
+            resultadoTexto.text = "El correo debe ser @uao.edu.co";
+            resultadoTexto.color = Color.red;
+            panelError.SetActive(true);
+        }
+
 
     }
 }

@@ -21505,6 +21505,7 @@ MonoBehaviour:
   ventanaEmergente: {fileID: 746410111}
   MusicaMenu: {fileID: 1725580138}
   MusicaEntrenamiento: {fileID: 1105993685}
+  timerTextTMP: {fileID: 1725737754}
 --- !u!1 &1408140863
 GameObject:
   m_ObjectHideFlags: 0
