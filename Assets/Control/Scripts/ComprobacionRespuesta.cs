@@ -28,7 +28,7 @@ public class ComprobacionRespuesta : MonoBehaviour
 
         Vector3 posicionActual = balon.position;
         nuevaPosicionY = 0.45f +controlDiego.metrosEquivalentes;
-        nuevaPosicionx = -6.70235f - controlDiego.distancia;
+        nuevaPosicionx = -6.522F - controlDiego.distancia;
         // Cambia la posición en el eje Y a la nueva posición deseada
         posicionActual.y =  nuevaPosicionY;
         posicionActual.x =  nuevaPosicionx;
@@ -41,7 +41,7 @@ public class ComprobacionRespuesta : MonoBehaviour
 
         Vector3 posicionActualJ = balonJ.position;
         nuevaPosicionY = 0.45f +controlJuan.metrosEquivalentes;
-        nuevaPosicionx = -6.70235f - controlJuan.distanciaJ;
+        nuevaPosicionx = -6.522f - controlJuan.distanciaJ;
         // Cambia la posición en el eje Y a la nueva posición deseada
         posicionActualJ.y =  nuevaPosicionY;
         posicionActualJ.x =  nuevaPosicionx;
@@ -54,7 +54,7 @@ public class ComprobacionRespuesta : MonoBehaviour
         
         Vector3 posicionActualR = balonR.position;
         nuevaPosicionY2 = 0.45f + controlRoberto.metrosEquivalentes;
-        nuevaPosicionx2 = -6.70235f - controlRoberto.distancia;
+        nuevaPosicionx2 = -6.522f - controlRoberto.distancia;
         // Cambia la posición en el eje Y a la nueva posición deseada
         posicionActualR.y =  nuevaPosicionY2;
         posicionActualR.x =  nuevaPosicionx2;
