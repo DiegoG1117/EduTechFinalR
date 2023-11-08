@@ -12,7 +12,6 @@ public class UserData
     public bool second_ex;
     public bool third_ex;
     public string time_minutes;
-    public int course_id;
     public string[] questions;
 }
 
@@ -93,26 +92,35 @@ public class ControladorEstadio : MonoBehaviour
             DistanciaR.ToString()
         };
 
-
-
         // Inicializa los datos
         UserData myData = new UserData
         {
-            email = "jorge_enrique.barragan2@uao.edu.co",
+            email = email,
             first_ex = IntToBool(LanzamientoD),
             second_ex = IntToBool(LanzamientoJ),
             third_ex = IntToBool(LanzamientoR),
             time_minutes = totalTime,
-            course_id = 14,
             questions = dataTiros
         };
 
+        // // Inicializa los datos
+        // UserData myData = new UserData
+        // {
+        //     email = "jorge_enrique.barragan2@uao.edu.co",
+        //     first_ex = IntToBool(LanzamientoD),
+        //     second_ex = IntToBool(LanzamientoJ),
+        //     third_ex = IntToBool(LanzamientoR),
+        //     time_minutes = totalTime,
+        //     questions = dataTiros
+        // };
+
         // URL del endpoint al que quieres enviar el JSON
-        string url = "tu_endpoint_aqui";
+        // string url = "http://localhost:3000/api/grades?userId=jorge_enrique.barragan2@uao.edu.co";
+        string url = "http://localhost:3000/api/grades?userId=" + email;
 
         string jsonData = JsonUtility.ToJson(myData);
         Debug.Log("JSON: " + jsonData);
-        //StartCoroutine(PostRequest(url, jsonData));
+        StartCoroutine(PostRequest(url, jsonData));
     }
 
 
