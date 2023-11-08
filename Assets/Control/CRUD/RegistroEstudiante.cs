@@ -17,7 +17,7 @@ public class RegistroEstudiante : MonoBehaviour
     public Toggle aceptarToggle; // Agregado el Toggle
 
     public GameObject canvasRegistro;
-    public GameObject canvasLogin; // Aseg�rate de asignar el canvas de Login en el Inspector de Unity
+    //public GameObject canvasLogin; // Aseg�rate de asignar el canvas de Login en el Inspector de Unity
 
     [SerializeField] TMP_InputField inputField;
     [SerializeField] TMP_Text resultadoTexto;
@@ -31,12 +31,16 @@ public class RegistroEstudiante : MonoBehaviour
     [SerializeField] TMP_Text textoclaseV;
     [SerializeField] TMP_Text textotoggleV;
 
+    public GameObject panelMiraCorreo;
+
     public delegate char ValidarInputDelegate(string text, int charIndex, char addedChar);
 
     private const string role = "1"; // Valor constante para el campo role
 
     void Start()
     {
+        //panelMiraCorreo.SetActive(false);
+
         if (registroButton != null)
         {
             registroButton.onClick.AddListener(RegistrarEstudiante);
@@ -118,6 +122,8 @@ public class RegistroEstudiante : MonoBehaviour
             if (canvasRegistro != null)
             {
                 canvasRegistro.SetActive(false);
+               
+
             }
             else
             {
@@ -125,9 +131,17 @@ public class RegistroEstudiante : MonoBehaviour
             }
 
             // Encender canvas de Login
-            if (canvasLogin != null)
+            if (panelMiraCorreo != null)
             {
-                canvasLogin.SetActive(true);
+                panelMiraCorreo.SetActive(true);
+                //canvasLogin.SetActive(true);
+
+                //nameInput.text = "";
+                //lastNameInput.text = "";
+                //emailInput.text = "";
+                //passwordInput.text = "";
+                //courseIdInput.text = "";
+
             }
             else
             {
@@ -194,7 +208,7 @@ public class RegistroEstudiante : MonoBehaviour
             MostrarError("El correo debe terminar con @uao.edu.co", resultadoTexto, Color.red);
             return false;
         }
-        MostrarError("Correo", resultadoTexto, Color.white);
+        MostrarError("Correo electrónico ", resultadoTexto, Color.white);
         return true;
     }
 
@@ -239,7 +253,7 @@ public class RegistroEstudiante : MonoBehaviour
     bool ValidarToggle()
     {
         // Verifica que el Toggle est� marcado
-        if (aceptarToggle != null)
+        if (aceptarToggle.isOn == false)
         {
             // Si el Toggle no est� marcado, muestra un mensaje de error
             MostrarError("Es necesario que aceptes", textotoggleV, Color.red);
@@ -295,6 +309,7 @@ public class RegistroEstudiante : MonoBehaviour
         request.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
         request.SetRequestHeader("Content-Type", "application/json");
 
+
         // Enviar la solicitud y esperar la respuesta
         yield return request.SendWebRequest();
 
@@ -306,6 +321,8 @@ public class RegistroEstudiante : MonoBehaviour
         else
         {
             Debug.Log("Estudiante registrado exitosamente");
+
+
         }
     }
 }
