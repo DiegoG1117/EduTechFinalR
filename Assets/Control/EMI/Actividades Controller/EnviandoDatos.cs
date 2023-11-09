@@ -46,6 +46,7 @@ public void DatosDiego()
           TerminandoejercicioDiego = true;
 
          ControladorMenuD.Menu();
+         ControladorMenuD.contadorRetos = ControladorMenuD.contadorRetos + 1;
 
     }
 
@@ -64,6 +65,7 @@ public void DatosJuan()
           TerminandoejercicioJuan = true;
 
          ControladorMenuD.Menu();
+         ControladorMenuD.contadorRetos = ControladorMenuD.contadorRetos + 1;
 
     }
 
@@ -77,6 +79,7 @@ public void DatosJuan()
             ejercicioRoberto = true;
             TerminandoejercicioRoberto = true;
             ControladorMenuD.Menu();
+            ControladorMenuD.contadorRetos = ControladorMenuD.contadorRetos + 1;
             }
             
     // Start is called before the first frame update

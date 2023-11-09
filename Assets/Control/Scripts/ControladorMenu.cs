@@ -60,11 +60,16 @@ public class ControladorMenu : MonoBehaviour
 
     // Obtener valor del temporizador
     public TextMeshProUGUI timerTextTMP;
+    public TextMeshProUGUI NumeroRetos;
+    public int contadorRetos;
+    public GameObject panelRetos;
 
 
     private void Start()
     {
+        contadorRetos = 0;
         ventanaEmergente.SetActive(false);
+        panelRetos.SetActive(true);
 
         VistaMenu.SetActive(true);
         ControladorJuan.SetActive(true);
@@ -137,6 +142,8 @@ public class ControladorMenu : MonoBehaviour
 
         }
 
+        NumeroRetos.text = "("+contadorRetos+"/3)";
+
     }
 
     public void Menu()
@@ -159,6 +166,7 @@ public class ControladorMenu : MonoBehaviour
 
         MusicaMenu.SetActive(true);
         MusicaEntrenamiento.SetActive(false);
+        panelRetos.SetActive(true);
 
     }
 
@@ -182,6 +190,7 @@ public class ControladorMenu : MonoBehaviour
 
         MusicaMenu.SetActive(false);
         MusicaEntrenamiento.SetActive(true);
+        panelRetos.SetActive(false);
     }
     public void PracticaDiego()
     {
@@ -203,6 +212,7 @@ public class ControladorMenu : MonoBehaviour
 
         MusicaMenu.SetActive(false);
         MusicaEntrenamiento.SetActive(true);
+        panelRetos.SetActive(false);
     }
     public void PracticaRoberto()
     {
@@ -224,6 +234,7 @@ public class ControladorMenu : MonoBehaviour
 
         MusicaMenu.SetActive(false);
         MusicaEntrenamiento.SetActive(true);
+        panelRetos.SetActive(false);
     }
     public void OnMouseEnter()
     {
