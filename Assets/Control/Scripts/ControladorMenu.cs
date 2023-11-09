@@ -63,11 +63,16 @@ public class ControladorMenu : MonoBehaviour
     public TextMeshProUGUI NumeroRetos;
     public int contadorRetos;
     public GameObject panelRetos;
+    public GameObject btnSeguirFalse;
+    public GameObject btnSeguirtrue;
+
 
 
     private void Start()
     {
         contadorRetos = 0;
+        btnSeguirFalse.SetActive(true);
+        btnSeguirtrue.SetActive(false);
         ventanaEmergente.SetActive(false);
         panelRetos.SetActive(true);
 
@@ -143,6 +148,11 @@ public class ControladorMenu : MonoBehaviour
         }
 
         NumeroRetos.text = "("+contadorRetos+"/3)";
+        if(contadorRetos == 3)
+        {
+        btnSeguirFalse.SetActive(false);
+        btnSeguirtrue.SetActive(true);
+        }
 
     }
 
