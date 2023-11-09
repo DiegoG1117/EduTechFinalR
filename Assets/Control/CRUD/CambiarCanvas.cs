@@ -19,17 +19,17 @@ public class CambiarCanvas : MonoBehaviour
 
     void Start()
     {
-        // Asegúrate de que solo uno de los Canvas esté activo al inicio
-        canvasRegistro.SetActive(true);
-        canvasLogin.SetActive(false);
+        // Asegï¿½rate de que solo uno de los Canvas estï¿½ activo al inicio
+        canvasRegistro.SetActive(false);
+        canvasLogin.SetActive(true);
 
     }
 
     public void CambiarEntreCanvas()
     {
-        // Cambia la visibilidad de los Canvas al presionar el botón
+        // Cambia la visibilidad de los Canvas al presionar el botï¿½n
         canvasRegistro.SetActive(!canvasRegistro.activeSelf);
-        //canvasLogin.SetActive(!canvasLogin.activeSelf);
+        canvasLogin.SetActive(!canvasLogin.activeSelf);
         nameInput.text = "";
         lastNameInput.text = "";
         emailInput.text = "";
