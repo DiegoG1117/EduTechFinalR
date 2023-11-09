@@ -29,7 +29,7 @@ public class CambiarCanvas : MonoBehaviour
     {
         // Cambia la visibilidad de los Canvas al presionar el botón
         canvasRegistro.SetActive(!canvasRegistro.activeSelf);
-        canvasLogin.SetActive(!canvasLogin.activeSelf);
+        //canvasLogin.SetActive(!canvasLogin.activeSelf);
         nameInput.text = "";
         lastNameInput.text = "";
         emailInput.text = "";

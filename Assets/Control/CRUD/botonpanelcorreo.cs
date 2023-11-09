@@ -22,7 +22,7 @@ public class botonpanelcorreo : MonoBehaviour
     void Start()
     {
         // Asegúrate de que solo uno de los Canvas esté activo al inicio
-       
+        canvasLogin.SetActive(false);
 
     }
 
